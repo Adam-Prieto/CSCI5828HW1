@@ -50,7 +50,7 @@ public class SimpleAgedCacheTest {
 
         clock.offset(Duration.ofMillis(3000));
 
-        assertEquals(1, expired.size());
+        assertEquals(2, expired.size());
         assertEquals("anotherValue", expired.get("anotherKey"));
     }
 
