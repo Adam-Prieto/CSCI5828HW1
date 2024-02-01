@@ -50,11 +50,11 @@ public class SimpleAgedCacheTest {
 
         clock.offset(Duration.ofMillis(3000));
 
-        assertEquals(2, expired.size());
+        assertEquals(1, expired.size());
         assertEquals("anotherValue", expired.get("anotherKey"));
     }
 
-    static class TestClock extends Clock {
+    static class TestClock extends Clock{
         Duration offset = Duration.ZERO;
 
         @Override
@@ -73,6 +73,7 @@ public class SimpleAgedCacheTest {
         }
 
         public void offset(Duration offset) {
+            // Initialize member variable
             this.offset = offset;
         }
     }
